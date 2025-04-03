@@ -20,7 +20,8 @@ jobs:
         username: root
         key: ${{secrets.SSH_KEY}}
         script: |
-          source $NVM_DIR/nvm.sh 
+          export NVM_DIR=/root/.nvm
+          source /root/.nvm/nvm.sh
           cd /var/www/oberberg.dating
           git pull
           npm install
