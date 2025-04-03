@@ -13,23 +13,19 @@
                     <p class="text-sm">Jetzt registrieren und dein Glück finden! Noch heute starten ... </p>
                     <h2 class="font-bold text-2xl text-black">Oberberg.dating</h2>
                 </section>
-                <section class="actions">
+                <section class="actions mt-6 block lg:w-auto">
                     <a href="/register" class="btn btn-secondary">Jetzt registrieren</a>
                 </section>
             </section>
 
             <section class="grid grid-cols-6 gap-3 mt-6">
-                <div class="col-span-6 md:col-span-3">
-                    <img src="https://place-hold.it/500x350?text=Gummersbach" alt="">
+                <div class="col-span-6">
+                    <h2 class="font-bold text-2xl block text-center">
+                        Aus welcher Stadt kommst du ?
+                    </h2>
                 </div>
-                <div class="col-span-6 md:col-span-3">
-                    <img src="https://place-hold.it/500x350?text=Bergneustadt" alt="">
-                </div>
-                <div class="col-span-6 md:col-span-3">
-                    <img src="https://place-hold.it/500x350?text=Marienheide" alt="">
-                </div>
-                <div class="col-span-6 md:col-span-3">
-                    <img src="https://place-hold.it/500x350?text=Wiehl" alt="">
+                <div v-for="city in cities" class="col-span-6 md:col-span-3">
+                    <img :src="'https://place-hold.it/500x350?fontsize=23&text=' + city.name" alt="">
                 </div>
             </section>
         </section>
@@ -58,6 +54,62 @@ useHead({
         }
     ],
     description: 'Jetzt registrieren und dein Glück finden! Noch heute starten ...'
+});
+
+const cities = ref({
+    'bergneustadt': {
+        name: 'Bergneustadt',
+        code: 'bg',
+    },
+    'gummersbach': {
+        name: 'Gummersbach',
+        code: 'gm',
+    },
+    'wiehl': {
+        name: 'Wiehl',
+        code: 'wl',
+    },
+    'marienheide': {
+        name: 'Marienheide',
+        code: 'mh',
+    }
+    ,
+    'engelskirchen': {
+        name: 'Engelskirchen',
+        code: 'ek',
+    }
+    ,
+    'hückeswagen': {
+        name: 'Hückeswagen',
+        code: 'hw',
+    }
+    ,
+    'lindlar': {
+        name: 'Lindlar',
+        code: 'll',
+    }
+    ,
+    'morsbach': {
+        name: 'Morsbach',
+        code: 'mb',
+    },
+    'nümbrecht': {
+        name: 'Nümbrecht',
+        code: 'nb',
+    }, 'radevormwald': {
+        name: 'Radevormwald',
+        code: 'rvw',
+    }, 'reichshof': {
+        name: 'Reichshof',
+        code: 'rh',
+    }, 'waldbröl': {
+        name: 'Waldbröl',
+        code: 'wb',
+    },
+    'wipperfürth': {
+        name: 'Wipperfürth',
+        code: 'wf',
+    }
 });
 
 const mobile = computed(() => {
