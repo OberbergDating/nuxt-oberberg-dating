@@ -22,6 +22,6 @@ jobs:
         script: |
           cd /var/www/oberberg.dating
           git pull
-          bun install
-          bun run build
+          npm install
+          npm run build
           pm2 restart ecosystem.config.cjs
