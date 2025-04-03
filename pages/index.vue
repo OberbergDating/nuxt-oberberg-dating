@@ -25,7 +25,12 @@
                     </h2>
                 </div>
                 <div v-for="city in cities" class="col-span-6 md:col-span-3">
-                    <img :src="'https://place-hold.it/500x350?fontsize=23&text=' + city.name" alt="">
+                    <a :href="'/register?code=' + city.code">
+                        <h3 class="font-bold text-xl block text-center mb-3">
+                            {{ city.name }}
+                        </h3>
+                        <div :style="backgroundImageStyle(city)" class="w-full h-64 bg-cover"></div>
+                    </a>
                 </div>
             </section>
         </section>
@@ -40,6 +45,15 @@ import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const { width } = useWindowSize()
+
+const backgroundImageStyle = (city) => {
+    return {
+        backgroundImage: !city.image ? `url(https://place-hold.it/500x350?fontsize=23)` : `url(/unsplash/` + city.code + `.jpg)`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+    };
+};
 
 useHead({
     title: 'Oberberg.dating',
@@ -60,10 +74,12 @@ const cities = ref({
     'bergneustadt': {
         name: 'Bergneustadt',
         code: 'bg',
+        image: true
     },
     'gummersbach': {
         name: 'Gummersbach',
         code: 'gm',
+        image: true,
     },
     'wiehl': {
         name: 'Wiehl',
