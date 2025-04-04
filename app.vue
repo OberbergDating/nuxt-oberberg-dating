@@ -37,7 +37,7 @@ useHead({
             sizes: '180x180',
             href: '/apple-touch-icon.png',
         },
-        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/icon', href: '/favicon.ico' },
     ],
 });
 </script>
