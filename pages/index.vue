@@ -1,6 +1,6 @@
 <template>
     <section class="bg-gray-400 pb-6 border-2 mx-3 xl:mx-auto">
-        <section class="page w-full h-96 bg-cover bg-bottom bg-right" title="Foto von Kiwihug auf Unsplash"
+        <section class="page w-full h-64 md:h-96 bg-cover bg-bottom bg-right" title="Foto von Kiwihug auf Unsplash"
             :style="{ 'background-image': 'url(/unsplash/skyline3.jpg)' }">
             <section class="headline pt-12 px-12">
                 <p class="text-lg text-white hidden ">Oberberg.dating - die Plattform für Daten im Oberberg</p>
