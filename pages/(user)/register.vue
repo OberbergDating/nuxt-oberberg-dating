@@ -47,40 +47,47 @@
 </template>
 
 <script lang="ts" setup>
-import { usePocketBase } from '~/composable/pocketbase'
-import { useRouter } from 'vue-router'
+import { useRouter } from 'vue-router';
+import { usePocketBase } from '~/composable/pocketbase';
 
 const pb = usePocketBase();
 const router = useRouter();
 
 const form = ref({
- login: {
-  email: '',
-  password: '',
- },
- register: {
-  email: '',
-  password: '',
-  passwordConfirm: '',
- }
+    login: {
+        email: '',
+        password: '',
+    },
+    register: {
+        email: '',
+        password: '',
+        passwordConfirm: '',
+    },
 });
 
 const login = async () => {
-  await pb.collection('users').authWithPassword(form.value.login.email, form.value.login.password);
-  if (pb.authStore.isValid) {
-    router.push('/');
-  }
-}
+    await pb
+        .collection('users')
+        .authWithPassword(form.value.login.email, form.value.login.password);
+    if (pb.authStore.isValid) {
+        router.push('/');
+    }
+};
 
 const register = async () => {
-  await pb.collection('users').create({
-    email: form.value.register.email,
-    password: form.value.register.password,
-    passwordConfirm: form.value.register.passwordConfirm,
-  });
-  await pb.collection('users').authWithPassword(form.value.register.email, form.value.register.password);
-  if (pb.authStore.isValid) {
-    router.push('/');
-  }
-}
+    await pb.collection('users').create({
+        email: form.value.register.email,
+        password: form.value.register.password,
+        passwordConfirm: form.value.register.passwordConfirm,
+    });
+    await pb
+        .collection('users')
+        .authWithPassword(
+            form.value.register.email,
+            form.value.register.password,
+        );
+    if (pb.authStore.isValid) {
+        router.push('/');
+    }
+};
 </script>

@@ -17,14 +17,11 @@
 import { usePocketBase, usePocketBaseUrl } from '~/composable/pocketbase';
 
 const props = defineProps({
-    user: { type: Object, required: true }
+    user: { type: Object, required: true },
 });
 
 const pb = usePocketBase();
 const url = usePocketBaseUrl();
 
-
-onMounted(async () => {
-    
-});
+onMounted(async () => {});
 </script>

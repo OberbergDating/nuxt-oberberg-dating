@@ -15,9 +15,14 @@
 </template>
 
 <script lang="ts" setup>
-import { faBars, faHeart, faHeartCirclePlus, faTimes } from '@fortawesome/free-solid-svg-icons';
+import {
+    faBars,
+    faHeart,
+    faHeartCirclePlus,
+    faTimes,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { useLocalStorage } from '@vueuse/core';
 
-let open = useLocalStorage('nav-open', false, {});
+const open = useLocalStorage('nav-open', false, {});
 </script>

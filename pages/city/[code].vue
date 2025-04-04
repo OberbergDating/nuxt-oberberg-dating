@@ -10,8 +10,8 @@
 </template>
 
 <script lang="ts" setup>
-import { usePocketBase } from '~/composable/pocketbase';
 import { useRoute } from 'vue-router';
+import { usePocketBase } from '~/composable/pocketbase';
 
 const pb = usePocketBase();
 const route = useRoute();
@@ -19,9 +19,13 @@ const singles = ref([]);
 const city = ref({});
 
 onMounted(async () => {
-  city.value = await pb.collection('cities').getFirstListItem('code="' + route.params.code + '"');
-  singles.value = (await pb.collection('users').getList(1, 9, {
-    filter: 'city.code="' + route.params.code + '"'
-  })).items;
+    city.value = await pb
+        .collection('cities')
+        .getFirstListItem('code="' + route.params.code + '"');
+    singles.value = (
+        await pb.collection('users').getList(1, 9, {
+            filter: 'city.code="' + route.params.code + '"',
+        })
+    ).items;
 });
 </script>

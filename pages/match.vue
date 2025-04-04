@@ -44,8 +44,8 @@ const current = ref(0);
 const limit = ref(3);
 
 const next = () => {
-  current.value += 1;
-}
+    current.value += 1;
+};
 </script>
 
 <style>

@@ -38,17 +38,19 @@
 </template>
 
 <script setup lang="ts">
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faLink, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
 import { useWindowSize } from '@vueuse/core';
 import { computed } from 'vue';
-import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
-const { width } = useWindowSize()
+const { width } = useWindowSize();
 
 const backgroundImageStyle = (city) => {
     return {
-        backgroundImage: !city.image ? `url(https://place-hold.it/500x350?fontsize=23)` : `url(/unsplash/` + city.code + `.jpg)`,
+        backgroundImage: !city.image
+            ? `url(https://place-hold.it/500x350?fontsize=23)`
+            : `url(/unsplash/` + city.code + `.jpg)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
@@ -60,72 +62,74 @@ useHead({
     meta: [
         {
             name: 'description',
-            content: 'Jetzt registrieren und dein Glück finden! Noch heute starten ...'
+            content:
+                'Jetzt registrieren und dein Glück finden! Noch heute starten ...',
         },
         {
             name: 'keywords',
-            content: 'oberberg dating gummersbach bergneustadt wiehl marienheide single facebook'
-        }
+            content:
+                'oberberg dating gummersbach bergneustadt wiehl marienheide single facebook',
+        },
     ],
-    description: 'Jetzt registrieren und dein Glück finden! Noch heute starten ...'
+    description:
+        'Jetzt registrieren und dein Glück finden! Noch heute starten ...',
 });
 
 const cities = ref({
-    'bergneustadt': {
+    bergneustadt: {
         name: 'Bergneustadt',
         code: 'bg',
-        image: true
+        image: true,
     },
-    'gummersbach': {
+    gummersbach: {
         name: 'Gummersbach',
         code: 'gm',
         image: true,
     },
-    'wiehl': {
+    wiehl: {
         name: 'Wiehl',
-        code: 'wl'
+        code: 'wl',
     },
-    'marienheide': {
+    marienheide: {
         name: 'Marienheide',
         code: 'mh',
-    }
-    ,
-    'engelskirchen': {
+    },
+    engelskirchen: {
         name: 'Engelskirchen',
         code: 'ek',
-    }
-    ,
-    'hückeswagen': {
+    },
+    hückeswagen: {
         name: 'Hückeswagen',
         code: 'hw',
-    }
-    ,
-    'lindlar': {
+    },
+    lindlar: {
         name: 'Lindlar',
         code: 'll',
-    }
-    ,
-    'morsbach': {
+    },
+    morsbach: {
         name: 'Morsbach',
         code: 'mb',
     },
-    'nümbrecht': {
+    nümbrecht: {
         name: 'Nümbrecht',
         code: 'nb',
-    }, 'radevormwald': {
+    },
+    radevormwald: {
         name: 'Radevormwald',
         code: 'rvw',
-    }, 'reichshof': {
+    },
+    reichshof: {
         name: 'Reichshof',
         code: 'rh',
-    }, 'waldbröl': {
+    },
+    waldbröl: {
         name: 'Waldbröl',
         code: 'wb',
     },
-    'wipperfürth': {
+    wipperfürth: {
         name: 'Wipperfürth',
         code: 'wf',
-    }
+    },
 });
 
 const mobile = computed(() => {
