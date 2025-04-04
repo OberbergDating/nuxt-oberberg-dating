@@ -1,0 +1,16 @@
+{
+	"name": "Oberberg.dating",
+	"short_name": "Oberberg.dating",
+	"description": "Oberberg.dating - By Jonathan Martz",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#FFF",
+	"theme_color": "#1f6fed",
+	"icons": [
+		{
+			"sizes": "512x512",
+			"src": "/icon-oberberg-dating.svg",
+			"type": "image/svg+xml"
+		}
+	]
+}

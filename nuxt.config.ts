@@ -3,7 +3,10 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineNuxtConfig({
     compatibilityDate: '2024-11-01',
     devtools: { enabled: true },
-    modules: [],
+    modules: ['@vite-pwa/nuxt'],
+    pwa: {
+        /* PWA options */
+      },
     css: ['~/app.css'],
     vite: {
         plugins: [tailwindcss()],
