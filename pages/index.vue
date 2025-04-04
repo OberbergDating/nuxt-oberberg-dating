@@ -7,7 +7,7 @@
                 <h2 class="font-bold text-2xl text-white hidden">Jetzt gemeinsam durschstarten</h2>
             </section>
         </section>
-        <section class="overlay bg-white rounded-t-xl text-black -mt-24 mx-6 px-6 py-6">
+        <section class="overlay bg-white rounded-t-xl text-black -mt-24 mx-3 md:mx-6 px-6 py-6">
             <section class="headline flex flex-col md:flex-row md:justify-between">
                 <section class="text">
                     <p class="text-sm">Jetzt registrieren und dein Glück finden! Noch heute starten ... </p>

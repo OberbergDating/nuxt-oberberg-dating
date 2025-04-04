@@ -1,5 +1,5 @@
 <template>
-  <section class="hidden lg:block logo font-bold ml-3 flex items-center bg-white rounded-lg px-3 py-3">
+  <section class="hidden lg:flex logo font-bold ml-3 items-center bg-white rounded-lg px-3 py-3">
     <a href="/" class="flex-row flex">
       <img src="/icon-oberberg-dating.svg" class="h-16" alt="">
       <section class="headline-logo flex flex-col justify-center">
