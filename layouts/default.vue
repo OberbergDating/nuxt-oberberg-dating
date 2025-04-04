@@ -1,9 +1,17 @@
 <template>
-    <section class="bg-blue-500 min-h-screen">
+    <section class="bg-blue-500 min-h-screen bg-cover"
+        style="background-repeat: repeat;background-image: url('/unsplash/skyline2.jpg')">
         <header class="mx-auto max-w-6xl bg-white px-3 py-3 flex justify-between">
             <section class="logo font-bold flex items-center">
-                <img src="https://place-hold.it/220x80?text=Oberberg.Dating" alt="">
-                <a href="/" class="ml-5">Oberberg.Dating</a>
+                <a href="/" class="flex flex-row">
+                    <img src="/icon-oberberg-dating.svg" class="h-16" alt="">
+                    <section class="headline-logo flex flex-col justify-center">
+                        <div class="ml-5 text-3xl">
+                            Oberberg.Dating
+                        </div>
+                        <p class="text-xs mx-auto pl-6">Dein Match aus dem Oberberg</p>
+                    </section>
+                </a>
             </section>
             <section class="nav">
                 <section class="mobile md:hidden">mobile</section>
@@ -22,7 +30,8 @@
         <footer class="mx-auto max-w-6xl bg-white">
             <section class="grid grid-cols-8">
                 <div class="col-span-8 md:col-span-2">
-                    <a href="/impressum">Impressum</a> & <a href="/datenschutz">Datenschutz</a></div>
+                    <a href="/impressum">Impressum</a> & <a href="/datenschutz">Datenschutz</a>
+                </div>
                 <div class="col-span-8 md:col-span-2">
                     <span>Made with</span>
                     <Fa :icon="faHeart" class="w-5" size="2x" color="red" />
