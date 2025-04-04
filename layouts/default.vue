@@ -1,30 +1,14 @@
 <template>
-    <section class="bg-blue-500 min-h-screen bg-cover"
-        style="background-repeat: repeat;background-image: url('/unsplash/skyline2.jpg')">
-        <header class="mx-auto max-w-6xl bg-white px-3 py-3 flex justify-between">
-            <section class="logo font-bold flex items-center">
-                <a href="/" class="flex flex-row">
-                    <img src="/icon-oberberg-dating.svg" class="h-16" alt="">
-                    <section class="headline-logo flex flex-col justify-center">
-                        <div class="ml-5 text-3xl">
-                            Oberberg.Dating
-                        </div>
-                        <p class="text-xs mx-auto pl-6">Dein Match aus dem Oberberg</p>
-                    </section>
-                </a>
-            </section>
-            <section class="nav">
-                <section class="mobile md:hidden">mobile</section>
-                <section class="desktop hidden md:flex items-center mt-12">
-                    <ul class="flex space-x-6">
-                        <li><a href="" class="btn btn-sm btn primary">Startseite</a></li>
-                        <li><a href="" class="btn btn-sm btn primary">zum Daten</a></li>
-                        <li><a href="" class="btn btn-sm btn primary">Setting</a></li>
-                    </ul>
-                </section>
+    <section class="bg-blue-500 min-h-screen bg-cover bg-fixed" style="background-image: url('/unsplash/skyline2.jpg')">
+        <header class="mx-auto max-w-6xl py-3 flex justify-between">
+            <LogoDesktop />
+            <LogoMobile />
+            <section>
+                <NavDesktop />
+                <NavMobile />
             </section>
         </header>
-        <main class="min-h-screen mx-auto max-w-6xl py-3">
+        <main class="min-h-screen mx-auto max-w-6xl ">
             <slot></slot>
         </main>
         <footer class="mx-auto max-w-6xl bg-white">
