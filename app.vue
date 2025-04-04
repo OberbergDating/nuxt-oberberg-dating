@@ -25,8 +25,8 @@ useHead({
       type: 'image/png',
       sizes: '512x512',
       href: '/android-chrome-512x512.png',
-    }
-        {
+    },
+    {
       rel: 'icon',
       type: 'image/png',
       sizes: '192x192',
@@ -37,7 +37,7 @@ useHead({
       sizes: '180x180',
       href: '/apple-touch-icon.png',
     },
-    { rel: 'icon', type: 'image/icon', href: '/favicon.ico' },
+    { rel: 'icon', type: 'image/icon', href: '/favicon.ico' }
   ],
 });
 </script>
