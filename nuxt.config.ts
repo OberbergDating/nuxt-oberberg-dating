@@ -8,6 +8,11 @@ export default defineNuxtConfig({
     pwa: {
         /* PWA options */
     },
+    app: {
+        head: {
+            link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+        }
+    },
     css: ['~/app.css'],
     vite: {
         plugins: [tailwindcss(),VitePWA({ registerType: 'autoUpdate' })],
