@@ -15,4 +15,9 @@ onMounted(() => {
       console.error('Service Worker registration failed:', error);
     });
 })
+
+useHead({
+  title: 'Oberberg.dating',
+  link: [{ rel: 'manifest', href: '/manifest.webmanifest' }],
+});
 </script>
