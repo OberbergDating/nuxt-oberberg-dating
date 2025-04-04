@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     modules: ['@vite-pwa/nuxt'],
     pwa: {
         /* PWA options */
-      },
+    },
     css: ['~/app.css'],
     vite: {
         plugins: [tailwindcss()],
