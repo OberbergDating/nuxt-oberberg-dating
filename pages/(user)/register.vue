@@ -8,12 +8,12 @@
         <form @submit.prevent="login()" class="bg-gray-400">
           <fieldset class="fieldset">
             <legend class="fieldset-legend">Whats your Email ?</legend>
-            <input type="email" v-model="form.email" class="input input-neutral w-full"
+            <input type="email" v-model="form.login.email" class="input input-neutral w-full"
               placeholder="mail@jonathan-martz.de" />
           </fieldset>
           <fieldset class="fieldset">
             <legend class="fieldset-legend">Whats your Password ?</legend>
-            <input type="password" v-model="form.password" class="input input-neutral w-full" placeholder="Password123" />
+            <input type="password" v-model="form.login.password" class="input input-neutral w-full" placeholder="Password123" />
           </fieldset>
           <section class="actions flex justify-end mt-6">
             <button type="submit" class="btn btn-primary">Einloggen</button>
