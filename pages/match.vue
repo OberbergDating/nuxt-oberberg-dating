@@ -1,6 +1,6 @@
 <template>
   <section class="page mx-auto max-w-6xl min-h-screen bg-white px-3 py-3">
-    <div class="mx-auto w-1/3">
+    <div class="mx-auto w-full sm:w-3/4 md:w-1/2 lg:w-1/3 my-[10vh] md:my-[18vh]">
       <template v-if="current < limit">
         <transition name="bounce" v-for="(key, index) in limit">
           <div v-if="current == index" class="card bg-gray-400 text-black">
@@ -13,9 +13,10 @@
                 actions parts</p>
             </div>
             <section>
-              <div class="flex justify-between px-3 py-3">
-                <button class="btn btn-primary w-3/7">uninteressant</button>
-                <button class="btn btn-primary w-3/7" @click="next()">mag ich</button>
+              <div class="flex justify-between px-3 py-3 space-x-3">
+                <button class="btn btn-neutral w-2/7">dont</button>
+                <button class="btn btn-secondary w-2/7">like</button>
+                <button class="btn btn-primary w-2/7" @click="next()">mag ich</button>
               </div>
             </section>
           </div>
