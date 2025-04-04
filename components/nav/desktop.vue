@@ -1,5 +1,5 @@
 <template>
-    <section class="desktop hidden md:flex items-center mt-14">
+    <section class="desktop hidden md:flex items-center md:mt-24 lg:mt-14">
         <ul class="flex space-x-6">
             <li>
                 <a href="/match" class="btn btn-sm btn-secondary hover:btn-primary">Suche dein Match</a>
