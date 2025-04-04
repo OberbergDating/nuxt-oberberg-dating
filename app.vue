@@ -19,7 +19,8 @@ onMounted(() => {
 useHead({
   title: 'Oberberg.dating',
   link: [{ rel: 'manifest', href: '/manifest.webmanifest' },
-  { rel: 'icon', type: 'image/png', href: '/abdroid-chrome-512x512.png' },
+  { rel: 'icon', type: 'image/png', sizes: '512x512',href: '/android-chrome-512x512.png' },
+  { rel: 'icon', type: 'image/png', sizes: '192x192',href: '/android-chrome-192x192.png' },
   { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
   { rel: 'icon', type: 'image/svg+xml', href: '/favicon.ico' }
   ],
