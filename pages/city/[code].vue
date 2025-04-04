@@ -12,7 +12,6 @@
 <script lang="ts" setup>
 import { useRoute } from 'vue-router';
 import { usePocketBase } from '~/composable/pocketbase';
-
 const pb = usePocketBase();
 const route = useRoute();
 const singles = ref([]);
