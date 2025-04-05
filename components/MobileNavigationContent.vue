@@ -18,6 +18,9 @@
 
 <script setup lang="ts">
 import { useLocalStorage } from '@vueuse/core';
-
+import { useRouter } from 'vue-router';
+onMounted(()=>{
+  open.value = false;
+});
 const open = useLocalStorage('nav-open', false, {});
 </script>

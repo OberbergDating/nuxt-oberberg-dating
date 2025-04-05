@@ -17,7 +17,6 @@
 <script lang="ts" setup>
 import {
     faBars,
-    faHeart,
     faHeartCirclePlus,
     faTimes,
 } from '@fortawesome/free-solid-svg-icons';
