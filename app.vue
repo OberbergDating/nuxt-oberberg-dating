@@ -1,11 +1,17 @@
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+    <NuxtLayout>
+        <NuxtPage />
+    </NuxtLayout>
 </template>
 
 <script setup lang="ts">
-onMounted(() => {
+import { useLocalStorage } from '@vueuse/core';
+import { usePocketBase } from './composable/pocketbase';
+
+const cities = useLocalStorage('cities', [], {});
+const pb = usePocketBase();
+
+onMounted(async () => {
     navigator.serviceWorker
         .register('/service-worker.js')
         .then((registration) => {
@@ -14,6 +20,7 @@ onMounted(() => {
         .catch((error) => {
             console.error('Service Worker registration failed:', error);
         });
+    cities.value = await pb.collection('cities').getFullList(25);
 });
 
 useHead({
