@@ -27,9 +27,9 @@
             <div class="card-image h-48 bg-cover w-full" style="background-image: url('/unsplash/skyline2.jpg')"></div>
           </figure>
           <div class="card-body text-white">Genies die Aussicht,<br> wir sehen uns morgen wieder :) </div>
-          <section class="card-actions flex px-3 py-3 justify-between">
-            <a href="/" class="btn btn-primary">Test Button</a>
-            <a href="/" class="btn btn-primary">Test Button</a>
+          <section v-if="user.expand" class="card-actions flex px-3 py-3 justify-between">
+            <a :href="'/city/' + user.expand.city.code" class="btn btn-primary btn-block text-center">Weitere Profile aus deiner Stadt</a>
+            <a href="/" class="btn btn-secondary btn-block text-center">Premium kaufen und das Limit erhöhen</a>
           </section>
         </section>
       </div>
@@ -45,7 +45,8 @@ import { useLocalStorage } from '@vueuse/core';
 
 const current = ref(0);
 const total = ref([]);
-const upcoming = ref([]);
+const upcoming = ref({});
+const user = ref([]);
 const limitReached = ref(false);
 const matches = ref([]);
 const pb = usePocketBase();
@@ -66,7 +67,7 @@ const next = async (rated_id, decision) => {
     if (status == '400') {
       // TODO toast push
       limitReached.value = true;
-      toasts.value.push({message});
+      toasts.value.push({ message });
     }
   }
 
@@ -76,6 +77,7 @@ const load = async () => {
   pb.autoCancellation(false);
   matches.value = await pb.collection('matches').getFullList(15, { filter: 'matcher="' + pb.authStore.record?.id + '"' });
   upcoming.value = await pb.collection('upcoming_matches').getFullList(15);
+  user.value = await pb.collection('users').getOne(pb.authStore.record?.id, { expand: 'city' });
 }
 
 onMounted(async () => {
@@ -88,6 +90,7 @@ onMounted(async () => {
   pb.collection('matches').subscribe('*', function (e) {
     load();
   }, { /* other options like: filter, expand, custom headers, etc. */ });
+  toasts.value.push({ message: 'Jeder hat ein tägliches Limit von 10 Match versuche.', type: 'warning' });
 });
 </script>
 

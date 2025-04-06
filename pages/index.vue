@@ -15,7 +15,11 @@
                 <div class="divider divider-primary">Stadt auswählen und starten</div>
             </div>
             <div v-for="city in cities" class="col-span-4 sm:col-span-2 flex items-center justify-center">
-                <a :href="'/register?code=' + city.code"
+                <a v-if="!pb.authStore.isValid" :href="'/register?code=' + city.code"
+                    class="app-icon rounded-lg bg-gray-400 w-16 h-16 flex items-center justify-center">
+                    {{ city.code.toUpperCase() }}
+                </a>
+                <a v-else :href="'/city/' + city.code"
                     class="app-icon rounded-lg bg-gray-400 w-16 h-16 flex items-center justify-center">
                     {{ city.code.toUpperCase() }}
                 </a>

@@ -1,6 +1,10 @@
 <template>
   <div class="toast toast-top toast-end">
-    <div class="alert alert-info" v-for="toast in toasts">
+    <div class="alert" :class="{
+      'alert-info': !toast.type,
+      'alert-success': toast.type == 'success',
+      'alert-warning': toast.type == 'warning',
+    }" v-for="toast in toasts">
       <span>{{ toast.message }}</span>
     </div>
   </div>
