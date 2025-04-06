@@ -5,6 +5,9 @@
         <a href="/match" class="btn btn-primary btn-sm w-full">Match</a>
       </div>
       <div class="col-span-6 sm:col-span-3">
+        <a href="/matches" class="btn btn-primary btn-sm w-full">Matches</a>
+      </div>
+      <div class="col-span-6 sm:col-span-3">
         <a href="/settings" class="btn btn-primary btn-sm w-full">Settings</a>
       </div>
       <div class="col-span-6">
