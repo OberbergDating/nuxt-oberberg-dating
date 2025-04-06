@@ -36,5 +36,6 @@ import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
                 </div>
             </section>
         </footer>
+        <Toasts />
     </section>
 </template>

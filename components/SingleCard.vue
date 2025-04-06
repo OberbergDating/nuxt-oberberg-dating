@@ -7,13 +7,22 @@
             <h2 class="card-title">{{ props.user.name }}</h2>
             <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
             <div class="card-actions justify-end">
-                <button class="btn btn-primary">Zum Profile</button>
+                <button class="btn btn-primary">
+                    <FontAwesomeIcon :icon="faMessage" />
+                    <span>Nachricht</span>
+                </button>
+                <button class="btn btn-primary">
+                    <FontAwesomeIcon :icon="faIdCard" class="" />
+                    <span>Zum Profile</span>
+                </button>
             </div>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
+import { faIdCard, faMessage } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { usePocketBase, usePocketBaseUrl } from '~/composable/pocketbase';
 
 const props = defineProps({
@@ -23,5 +32,5 @@ const props = defineProps({
 const pb = usePocketBase();
 const url = usePocketBaseUrl();
 
-onMounted(async () => {});
+onMounted(async () => { });
 </script>
