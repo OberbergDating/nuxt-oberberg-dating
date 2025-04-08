@@ -7,7 +7,7 @@
         <div v-if="selected == index" class="duration-700 ease-in-out" data-carousel-item>
           <img :src="'/city/' + city.code + '.jpg'"
             class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-          <a href="/city/gm"
+          <a :href="'/city/' + city.code"
             class="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-4 bg-black bg-opacity-50 text-white text-xl px-4 py-2 rounded">
             <span>Jetzt zu deiner Stadt = {{ city.name }}</span>
             <FontAwesomeIcon :icon="faLink" size="1x" color="white" class="ml-3" />
@@ -56,7 +56,7 @@ const cities = useLocalStorage('cities', [], {});
 const limit = ref(cities.value.length);
 
 const next = () => {
-  if (selected.value < limit.value -1) {
+  if (selected.value < limit.value - 1) {
     selected.value++;
   }
   else {
@@ -69,7 +69,7 @@ const prev = () => {
     selected.value--;
   }
   else {
-    selected.value = limit.value-1;
+    selected.value = limit.value - 1;
   }
 }
 </script>
